@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" 
+         version="2.5" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"> 
+         
+  <display-name>Archetype Created Web Application</display-name>
+  <!--  
+	  <servlet>
+	  <servlet-name>addStudent</servlet-name>
+	  <servlet-class>com.java.servlet.addStudent</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>addStudent</servlet-name>
+	  <url-pattern>/addStudent</url-pattern>
+	</servlet-mapping>-->
+	
+	
+	<servlet>
+	  <servlet-name>deleteStudent</servlet-name>
+	  <servlet-class>com.java.servlet.deleteStudent</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>deleteStudent</servlet-name>
+	  <url-pattern>/deleteStudent</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+	  <servlet-name>updateStudent</servlet-name>
+	  <servlet-class>com.java.updateStudent</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>updateStudent</servlet-name>
+	  <url-pattern>/updateStudent</url-pattern>
+	</servlet-mapping>
+</web-app>
