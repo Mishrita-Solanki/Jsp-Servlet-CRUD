@@ -10,7 +10,6 @@ public class Student {
 	private String birthDate;
 	private String education;
 	
-	
 	public String getName() {
 		return name;
 	}
@@ -23,7 +22,6 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 	public String getEmail() {
 		return email;
 	}
