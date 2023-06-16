@@ -7,14 +7,10 @@ public class Student {
 	private String name;
 	private String phoneNumber;
 	private String email;
-	private String dateOfBirth;
+	private String birthDate;
 	private String education;
 	
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email
-				+ ", dateOfBirth=" + dateOfBirth + ", education=" + education + "]";
-	}
+	
 	public String getName() {
 		return name;
 	}
@@ -40,11 +36,11 @@ public class Student {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public String getDateOfBirth() {
-		return dateOfBirth;
+	public String getBirthDate() {
+		return birthDate;
 	}
-	public void setDateOfBirth(String dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
 	public String getEducation() {
 		return education;

@@ -20,14 +20,14 @@ public class AddStudent extends HttpServlet{
 		String name=httpServletRequest.getParameter("name");
 		String email=httpServletRequest.getParameter("email");
 		String phoneNumber=httpServletRequest.getParameter("phoneNumber");
-		String dobString=httpServletRequest.getParameter("dateOfBirth");
+		String birthDateString=httpServletRequest.getParameter("birthDate");
 		String education=httpServletRequest.getParameter("education");
 		
 		Student student=new Student();
 		student.setName(name);
 		student.setEmail(email);
 		student.setPhoneNumber(phoneNumber);
-		student.setDateOfBirth(dobString);
+		student.setBirthDate(birthDateString);
 		student.setEducation(education);
 		
 		int status=StudentDao.insert(student);

@@ -11,21 +11,21 @@
 
 	<input type="hidden" name="id" value="${student.id}">
 	  <div class="form-group">
-	    <label for="name">Student name</label>
-	    <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Enter name" value="${student.name}">
-	    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+	    <label for="name">Student Name</label>
+	    <input type="text" class="form-control" name="name" placeholder="Enter name" value="${student.name}">
+	    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
 	  </div>
 	  <div class="form-group">
 	   <label for="email">Student Email</label>
 	    <input type="email" class="form-control" name="email" placeholder="Enter email" value="${student.email}">
 	  </div>
 	  <div class="form-group">
-	   <label for="email">Student Phone Number</label>
-	    <input type="text" class="form-control" name="phone_no" placeholder="Enter Phone Number" value="${student.phone_no}">
+	   <label for="phoneNumber">Student Phone Number</label>
+	    <input type="text" class="form-control" name="phoneNumber" placeholder="Enter Phone Number" value="${student.phoneNumber}">
 	  </div>
 	  <div class="form-group">
-	   <label for="dob">Student Date Of Birth</label>
-	    <input type="date" class="form-control" name="dob" placeholder="Enter Date Of Birth" value="${student.dob}">
+	   <label for=birthDate">Student Date Of Birth</label>
+	    <input type="date" class="form-control" name="birthDate" placeholder="Enter Birth Date" value="${student.birthDate}">
 	  </div>
 	  <div class="form-group">
 	   <label for="education">Student education</label>

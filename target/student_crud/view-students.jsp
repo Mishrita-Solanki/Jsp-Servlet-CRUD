@@ -30,7 +30,7 @@
 	      <td>${student.name}</td>
 	      <td>${student.email}</td>
 	      <td>${student.phoneNumber}</td>
-	      <td>${student.dateOfBirth}</td>
+	      <td>${student.birthDate}</td>
 	      <td>${student.education}</td>
 	      <td><a href="deleteStudent?id=${student.id}">Delete</a>
 	      <a href="getStudent?id=${student.id}">Update</a></td>

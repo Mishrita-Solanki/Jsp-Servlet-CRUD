@@ -18,17 +18,17 @@ public class UpdateStudent extends HttpServlet{
 		int id=Integer.parseInt(httpServletRequest.getParameter("id"));
 		String name=httpServletRequest.getParameter("name");
 		String email=httpServletRequest.getParameter("email");
-		String phoneNo=httpServletRequest.getParameter("phone_no");		
+		String phoneNumber=httpServletRequest.getParameter("phoneNumber");		
 		String education=httpServletRequest.getParameter("education");
-		String dobString=httpServletRequest.getParameter("dob");
+		String birthDateString=httpServletRequest.getParameter("birthDate");
 
 		Student student=new Student();
 		student.setId(id);
 		student.setName(name);
 		student.setEmail(email);
-		student.setPhoneNumber(phoneNo);
+		student.setPhoneNumber(phoneNumber);
 		student.setEducation(education);
-		student.setDateOfBirth(dobString);
+		student.setBirthDate(birthDateString);
 		
 		int status=StudentDao.updateStudent(student);
 		System.out.println(status);

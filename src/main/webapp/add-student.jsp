@@ -21,8 +21,8 @@
     <input type="text" class="form-control" name="phoneNumber" placeholder="Enter Phone Number">
   </div>
   <div class="form-group">
-   <label for="dateOfBirth">Student Date Of Birth</label>
-    <input type="date" class="form-control" name="dateOfBirth" placeholder="Enter Date Of Birth">
+   <label for="birthDate">Student Birth Date</label>
+    <input type="date" class="form-control" name="birthDate" placeholder="Enter Date Of Birth">
   </div>
   <div class="form-group">
    <label for="education">Student Education</label>

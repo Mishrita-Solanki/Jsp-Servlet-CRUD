@@ -29,10 +29,10 @@ public class StudentDao {
 			pst.setString(1, s.getName());
 			pst.setString(2, s.getEmail());
 			pst.setString(3, s.getPhoneNumber());
-			String dobString=s.getDateOfBirth();
+			String dobString=s.getBirthDate();
 			//date
-			java.sql.Date sqlDateOfBirth = java.sql.Date.valueOf(dobString);
-			pst.setDate(4, sqlDateOfBirth);
+			java.sql.Date birthDate = java.sql.Date.valueOf(dobString);
+			pst.setDate(4, birthDate);
 			pst.setString(5, s.getEducation());
 			
 			status=pst.executeUpdate();
@@ -88,9 +88,9 @@ public class StudentDao {
 				 s.setName(rs.getString("name"));
 				 s.setPhoneNumber(rs.getString("phone_number"));
 				 //date
-				 java.sql.Date dateOfBirth = rs.getDate("birth_date");
-				 String dobString = (dateOfBirth != null) ? dateOfBirth.toString() : null;
-				 s.setDateOfBirth(dobString);
+				 java.sql.Date birthDate = rs.getDate("birth_date");
+				 String birthDateString = (birthDate != null) ? birthDate.toString() : null;
+				 s.setBirthDate(birthDateString);
 				 s.setEducation(rs.getString("education"));
 				 students.add(s);
 				 
@@ -122,9 +122,9 @@ public class StudentDao {
 				student.setEducation(rs.getString("education"));
 				student.setEmail(rs.getString("email"));
 				//date
-				java.sql.Date dateOfBirth = rs.getDate("birth_date");
-				String dobString = (dateOfBirth != null) ? dateOfBirth.toString() : null;
-				student.setDateOfBirth(dobString);
+				java.sql.Date birthDate = rs.getDate("birth_date");
+				String birthDateString = (birthDate != null) ? birthDate.toString() : null;
+				student.setBirthDate(birthDateString);
 			}
 			return student;
 			
@@ -144,9 +144,9 @@ public class StudentDao {
 			pst.setString(3, student.getPhoneNumber());
 			pst.setString(4, student.getEducation());
 			//date
-			String dobString=student.getDateOfBirth();
-			java.sql.Date dateOfBirth = java.sql.Date.valueOf(dobString);
-			pst.setDate(5, dateOfBirth);
+			String birthDateString=student.getBirthDate();
+			java.sql.Date birthDate = java.sql.Date.valueOf(birthDateString);
+			pst.setDate(5, birthDate);
 			pst.setInt(6, student.getId());
 			status=pst.executeUpdate();
 			return status;
