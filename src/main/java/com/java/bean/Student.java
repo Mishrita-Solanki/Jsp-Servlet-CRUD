@@ -5,17 +5,16 @@ public class Student {
 
 	private int id;
 	private String name;
-	private String phone_no;
+	private String phoneNumber;
+	private String email;
+	private String dateOfBirth;
+	private String education;
+	
 	@Override
 	public String toString() {
-		return "Student [name=" + name + ", phone_no=" + phone_no + ", email=" + email + ", dob=" + dob + ", education="
-				+ education + ", getName()=" + getName() + ", getPhone_no()=" + getPhone_no() + ", getEmail()="
-				+ getEmail() + ", getDob()=" + getDob() + ", getEducation()=" + getEducation() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		return "Student [id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email
+				+ ", dateOfBirth=" + dateOfBirth + ", education=" + education + "]";
 	}
-	private String email;
-	private String dob;
-	private String education;
 	public String getName() {
 		return name;
 	}
@@ -28,24 +27,24 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPhone_no() {
-		return phone_no;
-	}
-	public void setPhone_no(String phone_no) {
-		this.phone_no = phone_no;
-	}
+	
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public String getDob() {
-		return dob;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
-	public void setDob(String dob) {
-		this.dob = dob;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 	public String getEducation() {
 		return education;
@@ -53,9 +52,4 @@ public class Student {
 	public void setEducation(String education) {
 		this.education = education;
 	}
-	
-	
-	
-	
-	
 }

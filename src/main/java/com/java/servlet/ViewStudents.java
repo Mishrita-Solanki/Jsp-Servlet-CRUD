@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.java.bean.Student;
 import com.java.dao.StudentDao;
 
-@WebServlet("/ViewStudents")
+@WebServlet("/viewStudents")
 public class ViewStudents extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException,IOException {

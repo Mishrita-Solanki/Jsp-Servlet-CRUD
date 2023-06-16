@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.java.bean.Student;
 import com.java.dao.StudentDao;
 
-@WebServlet("/GetStudent")
+@WebServlet("/getStudent")
 public class GetStudent extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
@@ -19,6 +19,5 @@ public class GetStudent extends HttpServlet{
 		Student student=StudentDao.getStudent(id);
 		httpServletRequest.setAttribute("student",student);
 		httpServletRequest.getRequestDispatcher("edit.jsp").forward(httpServletRequest, httpServletResponse);
-	    
 	}
 }

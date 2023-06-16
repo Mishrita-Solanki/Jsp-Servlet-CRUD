@@ -8,31 +8,28 @@
 <h2>Add Student</h2>
 <form action="addStudent" method="post">
   <div class="form-group">
-    <label for="name">Student name</label>
-    <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Enter name">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <label for="name">Student Name</label>
+    <input type="text" class="form-control" name="name" placeholder="Enter name">
+    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
    <label for="email">Student Email</label>
     <input type="email" class="form-control" name="email" placeholder="Enter email">
   </div>
-  
-  
   <div class="form-group">
    <label for="email">Student Phone Number</label>
-    <input type="text" class="form-control" name="phone_no" placeholder="Enter Phone Number">
-  </div>
-  
-  <div class="form-group">
-   <label for="dob">Student Date Of Birth</label>
-    <input type="date" class="form-control" name="dob" placeholder="Enter Date Of Birth">
+    <input type="text" class="form-control" name="phoneNumber" placeholder="Enter Phone Number">
   </div>
   <div class="form-group">
-   <label for="education">Student education</label>
+   <label for="dateOfBirth">Student Date Of Birth</label>
+    <input type="date" class="form-control" name="dateOfBirth" placeholder="Enter Date Of Birth">
+  </div>
+  <div class="form-group">
+   <label for="education">Student Education</label>
     <input type="text" class="form-control" name="education" placeholder="Enter Student's education">
   </div>
   
-  <button type="submit" class="btn btn-primary">Add</button>
+  <button type="submit" class="btn btn-primary">Add Student</button>
 </form>
 </div>
 </body>

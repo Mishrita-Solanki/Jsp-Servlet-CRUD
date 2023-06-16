@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.java.dao.StudentDao;
 
-@WebServlet("/DeleteStudent")
+@WebServlet("/deleteStudent")
 public class DeleteStudent extends HttpServlet{
 
 	protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
-	    // Handle GET request
+
 		int id=Integer.parseInt(httpServletRequest.getParameter("id"));
 		int status=StudentDao.delete(id);
 		if(status==1){

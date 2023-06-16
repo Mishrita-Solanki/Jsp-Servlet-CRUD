@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.java.bean.Student;
 import com.java.dao.StudentDao;
 
-@WebServlet("/UpdateStudent")
+@WebServlet("/updateStudent")
 public class UpdateStudent extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
@@ -26,9 +26,9 @@ public class UpdateStudent extends HttpServlet{
 		student.setId(id);
 		student.setName(name);
 		student.setEmail(email);
-		student.setPhone_no(phoneNo);
+		student.setPhoneNumber(phoneNo);
 		student.setEducation(education);
-		student.setDob(dobString);
+		student.setDateOfBirth(dobString);
 		
 		int status=StudentDao.updateStudent(student);
 		System.out.println(status);

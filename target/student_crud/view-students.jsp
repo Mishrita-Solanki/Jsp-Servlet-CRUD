@@ -8,6 +8,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </head>
 <body>
+
+<div style="margin:100px;">
     <h1>Students List</h1>
 	<table class="table table-striped">
 	  <thead>
@@ -27,14 +29,15 @@
 	      <td>${student.id}</td>
 	      <td>${student.name}</td>
 	      <td>${student.email}</td>
-	      <td>${student.phone_no}</td>
-	      <td>${student.dob}</td>
+	      <td>${student.phoneNumber}</td>
+	      <td>${student.dateOfBirth}</td>
 	      <td>${student.education}</td>
-	      <td><a href="DeleteStudent?id=${student.id}">Delete</a>
-	      <a href="GetStudent?id=${student.id}">Update</a></td>
+	      <td><a href="deleteStudent?id=${student.id}">Delete</a>
+	      <a href="getStudent?id=${student.id}">Update</a></td>
 	    </tr>
 	    </c:forEach>
 	  </tbody>
 	</table>
+	</div>
 </body>
 </html>

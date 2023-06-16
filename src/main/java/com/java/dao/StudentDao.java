@@ -25,13 +25,14 @@ public class StudentDao {
 		try
 		{
 			Connection con=getConnection();
-			PreparedStatement pst=con.prepareStatement("insert into student(name,email,phone_number,birthdate,education) values(?,?,?,?,?)");		
+			PreparedStatement pst=con.prepareStatement("insert into student(name,email,phone_number,birth_date,education) values(?,?,?,?,?)");		
 			pst.setString(1, s.getName());
 			pst.setString(2, s.getEmail());
-			pst.setString(3, s.getPhone_no());
-			String dateString=s.getDob();
-			java.sql.Date sqlDate = java.sql.Date.valueOf(dateString);
-			pst.setDate(4, sqlDate);
+			pst.setString(3, s.getPhoneNumber());
+			String dobString=s.getDateOfBirth();
+			//date
+			java.sql.Date sqlDateOfBirth = java.sql.Date.valueOf(dobString);
+			pst.setDate(4, sqlDateOfBirth);
 			pst.setString(5, s.getEducation());
 			
 			status=pst.executeUpdate();
@@ -85,10 +86,11 @@ public class StudentDao {
 				 s.setId(rs.getInt("id"));
 				 s.setEmail(rs.getString("email"));
 				 s.setName(rs.getString("name"));
-				 s.setPhone_no(rs.getString("phone_number"));
-				 java.sql.Date dob = rs.getDate("birthdate");
-				 String dateString = (dob != null) ? dob.toString() : null;
-				 s.setDob(dateString);
+				 s.setPhoneNumber(rs.getString("phone_number"));
+				 //date
+				 java.sql.Date dateOfBirth = rs.getDate("birth_date");
+				 String dobString = (dateOfBirth != null) ? dateOfBirth.toString() : null;
+				 s.setDateOfBirth(dobString);
 				 s.setEducation(rs.getString("education"));
 				 students.add(s);
 				 
@@ -105,7 +107,7 @@ public class StudentDao {
 	//getstudent
 	public static Student getStudent(int id)
 	{
-		Student s=new Student();
+		Student student=new Student();
 		try {
 			Connection con=getConnection();
 			PreparedStatement pst=con.prepareStatement("select*from student where id=?");
@@ -114,37 +116,38 @@ public class StudentDao {
 			ResultSet rs=pst.executeQuery();
 			while(rs.next())
 			{
-				s.setId(rs.getInt("id"));
-				s.setName(rs.getString("name"));
-				s.setPhone_no(rs.getString("phone_number"));
-				s.setEducation(rs.getString("education"));
-				s.setEmail(rs.getString("email"));
-				java.sql.Date dob = rs.getDate("birthdate");
-				String dateString = (dob != null) ? dob.toString() : null;
-				s.setDob(dateString);
+				student.setId(rs.getInt("id"));
+				student.setName(rs.getString("name"));
+				student.setPhoneNumber(rs.getString("phone_number"));
+				student.setEducation(rs.getString("education"));
+				student.setEmail(rs.getString("email"));
+				//date
+				java.sql.Date dateOfBirth = rs.getDate("birth_date");
+				String dobString = (dateOfBirth != null) ? dateOfBirth.toString() : null;
+				student.setDateOfBirth(dobString);
 			}
-			return s;
+			return student;
 			
 		} catch (SQLException e) {e.printStackTrace();}
 		return null;
 	}
 	
 	//update
-	public static int updateStudent(Student s)
+	public static int updateStudent(Student student)
 	{
 		int status=0;
 		try {
 			Connection con=getConnection();
-			PreparedStatement pst=con.prepareStatement("update student set name=?,email=?,phone_number=?,education=?,birthdate=? where id=?");
-			pst.setString(1, s.getName());
-			pst.setString(2, s.getEmail());
-			pst.setString(3, s.getPhone_no());
-			pst.setString(4, s.getEducation());
+			PreparedStatement pst=con.prepareStatement("update student set name=?,email=?,phone_number=?,education=?,birth_date=? where id=?");
+			pst.setString(1, student.getName());
+			pst.setString(2, student.getEmail());
+			pst.setString(3, student.getPhoneNumber());
+			pst.setString(4, student.getEducation());
 			//date
-			String dateString=s.getDob();
-			java.sql.Date sqlDate = java.sql.Date.valueOf(dateString);
-			pst.setDate(5, sqlDate);
-			pst.setInt(6, s.getId());
+			String dobString=student.getDateOfBirth();
+			java.sql.Date dateOfBirth = java.sql.Date.valueOf(dobString);
+			pst.setDate(5, dateOfBirth);
+			pst.setInt(6, student.getId());
 			status=pst.executeUpdate();
 			return status;
 		}

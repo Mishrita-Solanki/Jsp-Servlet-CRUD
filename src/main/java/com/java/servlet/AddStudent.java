@@ -1,32 +1,33 @@
 package com.java.servlet;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import com.java.bean.Student;
 import com.java.dao.StudentDao;
 
-import java.io.IOException;
-import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
-
-
 @WebServlet("/addStudent")
 public class AddStudent extends HttpServlet{
 
+	@Override
 	protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
 	    
 		String name=httpServletRequest.getParameter("name");
 		String email=httpServletRequest.getParameter("email");
-		String phoneNo=httpServletRequest.getParameter("phone_no");
-		String dobString=httpServletRequest.getParameter("dob");
+		String phoneNumber=httpServletRequest.getParameter("phoneNumber");
+		String dobString=httpServletRequest.getParameter("dateOfBirth");
 		String education=httpServletRequest.getParameter("education");
 		
 		Student student=new Student();
 		student.setName(name);
 		student.setEmail(email);
-		student.setPhone_no(phoneNo);
-		student.setDob(dobString);
+		student.setPhoneNumber(phoneNumber);
+		student.setDateOfBirth(dobString);
 		student.setEducation(education);
 		
 		int status=StudentDao.insert(student);

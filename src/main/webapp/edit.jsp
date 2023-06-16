@@ -7,7 +7,7 @@
 <body>
 <div style="margin:100px;">
 <h2>Update Student</h2>
-<form action="UpdateStudent" method="post">
+<form action="updateStudent" method="post">
 
 	<input type="hidden" name="id" value="${student.id}">
 	  <div class="form-group">
